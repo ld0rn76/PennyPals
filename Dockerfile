@@ -8,8 +8,10 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN npm install 
+# Install nodemon globally
+RUN npm install -g nodemon
 
 # Bundle app source
 COPY . .
-CMD [ "node" , "src/app.js" ]
+CMD [ "nodemon" , "src/app.js" ]
 EXPOSE 3000
