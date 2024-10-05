@@ -25,7 +25,7 @@ body {
 }
 
 #header{
-    width:100%;
+    width: 392px;
     height:70px;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
 }
 #progress{
@@ -232,4 +232,43 @@ body {
     align-items: center;
     height: 92px;
     
+}
+
+#coin {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+#coin img{
+    width: 36px !important;
+    height: 36px !important;
+}
+
+#bar{
+    width: 60%;
+}
+
+#streak{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+#streak img{
+    width: 27.79px;
+    height: 34.66px;
+}
+
+#streak h1{
+    font-size: 20px;
+    text-decoration: none !important;
+    color:#F9A61B;
+
+}
+#header a {
+    text-decoration: none;
 }
