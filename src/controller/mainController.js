@@ -3,7 +3,9 @@ const axios  = require('axios');
 const home = async (req, res) => {
     res.render("home")
 }
-
+const courses = async (req, res) => {
+    res.render("courses")
+}
 const investing = async(req, res) => {
     console.log(process.env.STOCK_API_KEY)
     //apple, amazon, and walmart
@@ -40,4 +42,4 @@ const investing = async(req, res) => {
     res.render("investing", {apple: info[0], walmart: info[1], amazon: info[2]})
 }
 
-module.exports = {home, investing}
+module.exports = {home, investing, courses}

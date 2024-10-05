@@ -1,0 +1,64 @@
+/* progress-bar.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+.star-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 50px;
+    margin-right: 10px;
+    color: #FFD700; /* Gold color for the star */
+}
+
+.level {
+    font-size: 20px;
+    color: #333;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(73, 89, 99); /* Total color */
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: rgb(164, 211, 185); /* Progress color */
+    border-radius: 15px;
+    transition: width 0.5s ease;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(255, 252, 219); /* Rod color */
+    color: rgb(73, 89, 99);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(235, 235, 180);
+}
