@@ -5,7 +5,11 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "start": "node --env-file=./.env src/server.js"
+=======
+    "start": "node --env-file=./src/.env src/server.js"
+>>>>>>> 9fd4a09ba430884caa0f1f21db8fde00b01ccb84
   },
   "author": "Liam, Michael, Ahmed, and Christina",
   "license": "ISC",
