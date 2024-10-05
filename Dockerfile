@@ -6,12 +6,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install 
 
-# Install nodemon globally
 RUN npm install -g nodemon
 
 # Bundle app source
 COPY . .
 
 # Run the app from server.js
-CMD [ "nodemon" , "src/server.js" ]
+CMD [ "nodemon", "src/server.js" ]
 EXPOSE 3000
