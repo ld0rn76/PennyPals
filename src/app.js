@@ -1,12 +1,13 @@
 // Import
 const express = require('express');
 const route = require('./routes/route');
+const axios = require('axios');
 const app = express();
 const path = require('path');
 
 // Static Files
-app.use(express.static(path.join(__dirname, '../public')));
-app.use('/css', express.static(path.join(__dirname, '../public/css')));
+//app.use(express.static(path.join(__dirname, '../public')));
+app.use('/css', express.static(path.join(__dirname, '../css')));
 app.use('/', route);
 
 // Set Views
