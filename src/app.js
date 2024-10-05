@@ -7,6 +7,8 @@ const app = express();
 
 // Static Files
 app.use('/css', express.static(path.join(__dirname, '../css')));
+app.use('/img', express.static(path.join(__dirname, '../img')));
+
 app.use('/', route);
 
 // Set Views

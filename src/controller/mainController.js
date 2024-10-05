@@ -5,6 +5,7 @@ const home = async (req, res) => {
 }
 
 const investing = async(req, res) => {
+    console.log(process.env.STOCK_API_KEY)
     let options = {
         method: 'GET',
         url: 'https://latest-stock-price.p.rapidapi.com/price',
