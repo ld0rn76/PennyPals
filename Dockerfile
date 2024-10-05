@@ -1,4 +1,4 @@
-FROM node:22
+FROM node:22-alpine
 # Create app directory
 WORKDIR /app
 
@@ -9,7 +9,7 @@ COPY package*.json ./
 
 RUN npm install 
 
-# Bundle APP source
+# Bundle app source
 COPY . .
+CMD [ "node" , "src/app.js" ]
 EXPOSE 3000
-CMD [ "node" , "app.js" ]
