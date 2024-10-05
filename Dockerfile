@@ -13,7 +13,3 @@ RUN npm install
 COPY . .
 CMD [ "node" , "src/app.js" ]
 EXPOSE 3000
-<<<<<<< HEAD
-=======
-CMD [ "node" , "src/app.js" ]
->>>>>>> a22009eaa19ebbfab10160c1cd21c0a8a806a003
