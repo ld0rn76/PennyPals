@@ -3,15 +3,15 @@ FROM node:22-alpine
 WORKDIR /app
 
 # Install app dependencies
-# A wildcard is used to ensure both package.json
-# where avaiable (npm@5+)
 COPY package*.json ./
-
 RUN npm install 
+
 # Install nodemon globally
 RUN npm install -g nodemon
 
 # Bundle app source
 COPY . .
-CMD [ "nodemon" , "src/app.js" ]
+
+# Run the app from server.js
+CMD [ "nodemon" , "src/server.js" ]
 EXPOSE 3000
