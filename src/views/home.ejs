@@ -8,15 +8,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/progress-bar.css">
 </head>
 <body>
     <div id = "header">
         <a href = "./profile.ejs">
             <div id = "coin">
-                <img id = "progress" src = "/img/coin.png">     
+                <img id = "progressing" src = "/img/coin.png">     
             </div>
-            <div id = "bar">
-                <img id = "progress" src = "/img/Group 2313.png">
+            <div class="container">
+                <div class="star-container">
+                    <img class="star" src="/img/star.png">
+                    <div class="level-number">0</div> <!-- The number only, centered on the star -->
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                </div>
             </div>
             <div id = "streak">
                 <img src = "/img/Vector 10.png">
@@ -128,4 +137,6 @@
 
 
 </body>
+<script src="/js/script.js"></script>
+
 </html>

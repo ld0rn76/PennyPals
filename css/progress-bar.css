@@ -1,6 +1,6 @@
 /* progress-bar.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,42 +9,52 @@ body {
 }
 
 .container {
-    text-align: center;
+    display: flex;
+    flex-direction: row; /* Aligns items in a column */
+    align-items: center; /* Center horizontally */
+    translate: -28px;
 }
 
 .star-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
+    position: relative; /* Position relative for positioning the level number */
 }
 
 .star {
-    font-size: 50px;
-    margin-right: 10px;
-    color: #FFD700; /* Gold color for the star */
+    width: 70px; /* Adjust based on your image size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 100;
+    translate: 40px;
 }
 
-.level {
-    font-size: 20px;
-    color: #333;
+.level-number {
+    position: absolute; /* Position absolute to overlay on star */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-60%, -60%); /* Adjust to truly center */
+    translate: 40px;
+    font-size: px; /* Font size for the level number */
+    color: white; /* Color for the number (can be changed) */
+    text-align: center; /* Center text */
+    z-index: 2; /* Higher z-index to ensure it sits on top */
 }
 
 .progress-bar {
-    width: 300px;
-    height: 30px;
+    width: 190px; /* Width of the progress bar */
+    height: 19px; /* Height of the progress bar */
     background-color: rgb(73, 89, 99); /* Total color */
-    border-radius: 15px;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px; /* Rounded corners for the progress bar */
+   /* position: relative; /* Context for progress */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    z-index: 0;
 }
 
 .progress {
-    height: 100%;
-    width: 0;
-    background-color: rgb(164, 211, 185); /* Progress color */
-    border-radius: 15px;
-    transition: width 0.5s ease;
+    height: 100%; /* Full height of the progress bar */
+    width: 0; /* Start with 0 width */
+    background-color: rgb(164, 211, 185); /* Color for progress made */
+    border-radius: 15px; /* Rounded corners for the progress */
+    transition: width 0.5s ease; /* Smooth transition for progress */
+    z-index: 0;
 }
 
 button {
