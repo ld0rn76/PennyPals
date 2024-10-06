@@ -29,9 +29,14 @@ for(let i = 0; i < stockButtons.length; i++){
     })
 }
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const progress = document.getElementById('progress');
-    const button = document.getElementById('increaseProgress');
+    const videoProgressButton = document.getElementById("video_progress");
+
+    console.log(videoProgressButton)
+
     const levelText = document.querySelector('.level-number');
     
     let currentWidth = 0; // Example: Initial progress width is 50%
@@ -46,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial update when page loads to reflect the initial width
     updateProgress();
 
-    if (button) {
-        button.addEventListener('click', function () {
-            let increment = 10; // Amount to increment on each click
+    if (videoProgressButton) {
+        videoProgressButton.addEventListener('click', function () {
+            let increment = 50; // Amount to increment on each click
 
             // Calculate the next width
             let nextWidth = currentWidth + increment;
