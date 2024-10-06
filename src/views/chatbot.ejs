@@ -1,132 +1,253 @@
-<div class="chat-container">
-    <div class="chat-window" id="chat-window">
-        <div class="message">
-            <div class="message-box sender">
-                Hi! I'm your financial friend. What would you like to learn about money today?
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Financial Friend</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        .chat-container {
+            width: 392px;
+            height: calc(100vh - 200px);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            font-family: "Inter", sans-serif;
+        }
+        .chat-window {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+        .message-box {
+            max-width: 80%;
+            padding: 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+        .sender {
+            background-color: #2A3140;
+            color: white;
+            border-top-left-radius: 0;
+            align-self: flex-start;
+        }
+        .receiver {
+            background-color: #2AA46A;
+            color: white;
+            border-top-right-radius: 0;
+            align-self: flex-end;
+        }
+        .preset-questions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .preset-btn {
+            background-color: #EDFDEB;
+            border: 1px solid #F1FFF1;
+            color: #2A3140;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: left;
+            transition: background-color 0.2s;
+        }
+        .preset-btn:hover {
+            background-color: #2AA46A;
+            color: white;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #FFF;
+            border-top: 1px solid #DDD;
+        }
+        .chat-input {
+            width: 85%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            background-color: #F7F8FA;
+        }
+        .send-button {
+            width: 40px;
+            height: 40px;
+            background-color: #2AA46A;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .send-button img {
+            width: 20px;
+            height: 20px;
+        }
+        .menu {
+            width: 392px;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            background-color: white;
+            border-top: 1px solid #DDD;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-window" id="chat-window">
+            <div class="message">
+                <div class="message-box sender">
+                    Hi! I'm your financial friend. What would you like to learn about money today?
+                </div>
+            </div>
+            
+            <div class="preset-questions">
+                <button class="preset-btn" onclick="sendPresetQuestion('What is an allowance?')">
+                    What is an allowance? 🎯
+                </button>
+                <button class="preset-btn" onclick="sendPresetQuestion('How do I save my money?')">
+                    How do I save my money? 💰
+                </button>
+                <button class="preset-btn" onclick="sendPresetQuestion('Can I buy toys with my allowance?')">
+                    Can I buy toys with my allowance? 🎮
+                </button>
+                <button class="preset-btn" onclick="sendPresetQuestion('Why should I save money?')">
+                    Why should I save money? 🏦
+                </button>
+                <button class="preset-btn" onclick="sendPresetQuestion('What is a piggy bank?')">
+                    What is a piggy bank? 🐷
+                </button>
             </div>
         </div>
-        
-        <!-- Preset questions as clickable buttons -->
-        <div class="preset-questions">
-            <button class="preset-btn" onclick="sendPresetQuestion('What is an allowance?')">
-                What is an allowance? 🎯
-            </button>
-            <button class="preset-btn" onclick="sendPresetQuestion('How do I save my money?')">
-                How do I save my money? 💰
-            </button>
-            <button class="preset-btn" onclick="sendPresetQuestion('Can I buy toys with my allowance?')">
-                Can I buy toys with my allowance? 🎮
-            </button>
-            <button class="preset-btn" onclick="sendPresetQuestion('Why should I save money?')">
-                Why should I save money? 🏦
-            </button>
-            <button class="preset-btn" onclick="sendPresetQuestion('What is a piggy bank?')">
-                What is a piggy bank? 🐷
+
+        <div class="input-container">
+            <input type="text" class="chat-input" id="chat-input" placeholder="Type your question here...">
+            <button class="send-button" onclick="sendMessage()">
+                <img src="/img/send.svg" alt="Send">
             </button>
         </div>
     </div>
 
-    <div class="input-container">
-        <input type="text" class="chat-input" id="chat-input" placeholder="Type your question here...">
-        <button class="send-button" onclick="sendMessage()">
-            <img src="/img/send.svg" alt="Send">
-        </button>
+    <div class="menu">
+        <img src="/img/menu (5).png" alt="Menu 1">
+        <a href="./courses">    
+            <img src="/img/menu (4).png" alt="Courses">
+        </a>
+        <a href="./">   
+            <img src="/img/menu (3).png" alt="Home">
+        </a>
+        <a href="./chatbot">   
+            <img src="/img/menu (2).png" alt="Chat">
+        </a> 
+        <img src="/img/menu (1).png" alt="Menu 5">
     </div>
-</div>
 
-<style>
-.preset-questions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.preset-btn {
-    background-color: #EDFDEB;
-    border: 1px solid #F1FFF1;
-    color: #2A3140;
-    padding: 12px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: left;
-    transition: background-color 0.2s;
-}
-
-.preset-btn:hover {
-    background-color: #2AA46A;
-    color: white;
-}
-
-.chat-input {
-    background-color: #F7F8FA;
-    border-radius: 10px;
-    padding: 12px;
-}
-
-.send-button {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.send-button img {
-    width: 20px;
-    height: 20px;
-}
-</style>
 
 <script>
-async function sendMessage() {
-    const input = document.getElementById('chat-input');
-    const message = input.value.trim();
-    if (!message) return;
-    
-    await sendPresetQuestion(message);
-    input.value = '';
-}
-
-async function sendPresetQuestion(question) {
-    const chatWindow = document.getElementById('chat-window');
-    
-    // Add user message
-    const userDiv = document.createElement('div');
-    userDiv.className = 'message';
-    userDiv.innerHTML = `
-        <div class="message-box receiver">
-            ${question}
-        </div>
-    `;
-    chatWindow.appendChild(userDiv);
-    
-    try {
-        const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: question })
-        });
+    async function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        if (!message) return;
         
-        const data = await response.json();
+        await sendPresetQuestion(message);
+        input.value = '';
+    }
+    
+    async function sendPresetQuestion(question) {
+        const chatWindow = document.getElementById('chat-window');
         
-        // Add bot response
-        const botDiv = document.createElement('div');
-        botDiv.className = 'message';
-        botDiv.innerHTML = `
-            <div class="message-box sender">
-                ${data.message}
+        // Add user message
+        const userDiv = document.createElement('div');
+        userDiv.className = 'message';
+        userDiv.innerHTML = `
+            <div class="message-box receiver">
+                ${question}
             </div>
         `;
-        chatWindow.appendChild(botDiv);
+        chatWindow.appendChild(userDiv);
         
-        // Scroll to bottom
-        chatWindow.scrollTop = chatWindow.scrollHeight;
-    } catch (error) {
-        console.error('Error:', error);
+        try {
+            console.log('Sending request with body:', { message: question });
+            
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: question })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            console.log('Received response:', data);
+            
+            if (!data.success) {
+                throw new Error(data.error || 'Unknown error occurred');
+            }
+            
+            // Add bot response
+            const botDiv = document.createElement('div');
+            botDiv.className = 'message';
+            botDiv.innerHTML = `
+                <div class="message-box sender">
+                    ${data.message}
+                </div>
+            `;
+            chatWindow.appendChild(botDiv);
+            
+            // Scroll to bottom
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        } catch (error) {
+            console.error('Error:', error);
+            // Add error message to chat
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'message';
+            errorDiv.innerHTML = `
+                <div class="message-box error">
+                    Sorry, I couldn't process your message right now. Error: ${error.message}
+                </div>
+            `;
+            chatWindow.appendChild(errorDiv);
+        }
     }
-}
-</script>
+    </script>
+
+</body>
+</html>
