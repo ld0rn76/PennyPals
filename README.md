@@ -1,12 +1,12 @@
 # Penny Pals: Financial Education for Kids
 
-## The Problem
+## 🎓 The Problem
 
 Financial literacy is often overlooked in traditional education, leaving young individuals unprepared to manage money effectively as they grow older.
 Many children are unaware of the fundamental principles of saving, budgeting, and investing. 
 Penny Pals addresses this issue by introducing these concepts early on in a format that is approachable, engaging, and easy to understand for young minds.
 
-## What is Penny Pals?
+## 🌟 What is Penny Pals?
 
 Penny Pals is an approachable investment simulation game designed to promote financial literacy, especially for people of color and women. We aim to reduce wealth disparity by practicing healthy financial practices, teaching risk, and building healthy relationships with money, and encouraging business and entrepreneurial skills. 
 
@@ -16,6 +16,9 @@ What makes our app unique is that it’s a game played collaboratively by the pa
 ## 🚀 Demo
 
 ✨ You can check out our live demo at [Penny Pals](https://pennypals.club)
+
+🎥 Watch our demo video! [View Demo](https://www.youtube.com/watch?v=abxPoHVwPH0)
+
 
 <table style="border-collapse: collapse; border: none;">
   <tr style="border: none;">
@@ -28,9 +31,13 @@ What makes our app unique is that it’s a game played collaboratively by the pa
   </tr>
 </table>
 
-### Future Innovations
+### 🔮 Future Innovations
 
 At Penny Pals, we are continually looking for ways to enhance the user experience for both children and parents. Here’s a look at what’s next for the platform:
+
+<p align="center">
+<img src="demo/slide5.png" width="600" />
+</p>
 
 - **iMessage Integration**: To make it easier for parents to engage with their children about financial lessons, we plan to integrate Penny Pals with iMessage. This will allow parents to send financial tips, reminders, and challenges directly to their kids through a platform they already use daily.
 
@@ -38,8 +45,11 @@ At Penny Pals, we are continually looking for ways to enhance the user experienc
 
 - **Expanded Investment Assets**: We plan to introduce more assets that children can "invest" in, giving them a broader perspective on saving and investing. By simulating a wider variety of financial instruments, kids will gain a more comprehensive understanding of real-world financial markets and choices.
 
-### Challenges and Hurdles
+### 🧗‍♀️ Challenges and Hurdles
 
 - **Implementing a Local AI Model**: Integrating a local AI model was challenging due to balancing performance, response times, and infrastructure setup.
 - **EJS for Frontend**: Ensuring dynamic data rendered correctly with EJS required careful management of templates and state changes.
 - **Real-Time Stock Data APIs**: Accessing real-time stock data involved overcoming API limitations and ensuring consistent, accurate data integration.
+
+---
+Join us in revolutionizing financial education for the next generation! 
