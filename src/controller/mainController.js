@@ -34,7 +34,6 @@ const home = async (req, res) => {
         
     console.log("TEST", info)
     res.render("home", {apple: info[0], walmart: info[1], amazon: info[2]})
-    res.render("home")
 }
 const courses = async (req, res) => {
     res.render("courses")
@@ -43,4 +42,4 @@ const chatbot = async (req, res) => {
     res.render("chatbot")
 }
 
-module.exports = {home, investing, courses}
+module.exports = {home, chatbot, courses}
