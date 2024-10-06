@@ -2,6 +2,7 @@ const express = require('express');
 const route = express.Router();
 
 const mainController = require('../controller/mainController');
+const { default: axios } = require('axios');
 
 
 route.get("/", mainController.home)

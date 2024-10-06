@@ -5,11 +5,17 @@ const axios = require('axios');
 const path = require('path');
 const app = express();
 
+
 // Static Files
 app.use('/css', express.static(path.join(__dirname, '../css')));
 app.use('/img', express.static(path.join(__dirname, '../img')));
 app.use('/js', express.static(path.join(__dirname, '../js')));
 app.use('/', route);
+app.use(express.json());
+
+// Handling CORS and Errors
+const cors = require('cors');
+app.use(cors());
 
 // Set Views
 app.set('views', path.join(__dirname, 'views'));
