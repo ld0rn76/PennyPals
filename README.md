@@ -12,9 +12,10 @@ Penny Pals is an approachable investment simulation game designed to promote fin
 
 What makes our app unique is that it’s a game played collaboratively by the parent and child, teaching both how to manage and communicate about finances. Parents simulate deposits into their child’s account, and the child invests that money based on real-time market data. 
 
-## Demo
 
-You can check out our live demo at [Penny Pals](https://pennypals.club).
+## 🚀 Demo
+
+✨ You can check out our live demo at [Penny Pals](https://pennypals.club)
 
 <table style="border-collapse: collapse; border: none;">
   <tr style="border: none;">
