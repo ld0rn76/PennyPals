@@ -1,86 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/progress-bar.css">
-</head>
-<body>
-    <div id = "header">
-        <a href = "./profile.ejs">
-            <div id = "coin">
-                <img id = "progressing" src = "/img/coin.png">     
+<div class="chat-container">
+    <div class="chat-window" id="chat-window">
+        <div class="message">
+            <div class="message-box sender">
+                Hi! I'm your financial friend. What would you like to learn about money today?
             </div>
-            <div class="container">
-                <div class="star-container">
-                    <img class="star" src="/img/star.png">
-                    <div class="level-number">0</div> <!-- The number only, centered on the star -->
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                </div>
-            </div>
-            <div id = "streak">
-                <img src = "/img/Vector 10.png">
-                <h1>30</h1>
-            </div>
-        </a>
-    </div> 
-    <div>
-        <input type="text" id="message-input" placeholder="Type your message here">
-        <button>Send</button>
+        </div>
+        
+        <!-- Preset questions as clickable buttons -->
+        <div class="preset-questions">
+            <button class="preset-btn" onclick="sendPresetQuestion('What is an allowance?')">
+                What is an allowance? 🎯
+            </button>
+            <button class="preset-btn" onclick="sendPresetQuestion('How do I save my money?')">
+                How do I save my money? 💰
+            </button>
+            <button class="preset-btn" onclick="sendPresetQuestion('Can I buy toys with my allowance?')">
+                Can I buy toys with my allowance? 🎮
+            </button>
+            <button class="preset-btn" onclick="sendPresetQuestion('Why should I save money?')">
+                Why should I save money? 🏦
+            </button>
+            <button class="preset-btn" onclick="sendPresetQuestion('What is a piggy bank?')">
+                What is a piggy bank? 🐷
+            </button>
+        </div>
     </div>
+
+    <div class="input-container">
+        <input type="text" class="chat-input" id="chat-input" placeholder="Type your question here...">
+        <button class="send-button" onclick="sendMessage()">
+            <img src="/img/send.svg" alt="Send">
+        </button>
+    </div>
+</div>
+
+<style>
+.preset-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.preset-btn {
+    background-color: #EDFDEB;
+    border: 1px solid #F1FFF1;
+    color: #2A3140;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+.preset-btn:hover {
+    background-color: #2AA46A;
+    color: white;
+}
+
+.chat-input {
+    background-color: #F7F8FA;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.send-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-button img {
+    width: 20px;
+    height: 20px;
+}
+</style>
+
+<script>
+async function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    if (!message) return;
     
-    <div class="message">
-        <div class="chat-container">
-            <div class="chat-window">
-                <div class="message-box sender">
-                    <p>Moooo! 😁 Do you have any questions about money?</p>
-                </div>
-                <h1 class = "receiver">Suggestions</h1>
-                <div class="message-box receiver suggestion">
-                    <p>Why do people need money?</p>
-                </div>
-                <div class="message-box receiver suggestion">
-                    <p>How do I save my money?</p>
-                </div>
-                <div class="message-box receiver suggestion">
-                    <p>I'm looking for help with my project.</p>
-                </div>
-                <div class = "icon">
-                    <img src = "/img/Cow.png">
-                    <img src = "/img/3 dots.png">
-                </div>
-            </div>
-            <div class="input-container">
-                <input type="text" placeholder="Type a message" class="chat-input">
-                <img src = "/img/send.png">
-            </div>
-        </div> 
-    </div>    
-    <div class = "menu1">
-        <img src = "/img/menu (5).png" >
-        <a href="./courses">    
-            <img src = "/img/menu (4).png">
-        </a>
-        
-        <a href="./">   
-            <img src = "/img/menu (3).png">
-        </a>
+    await sendPresetQuestion(message);
+    input.value = '';
+}
 
-        <a href="./chatbot">   
-            <img src = "/img/menu (2).png">
-        </a> 
+async function sendPresetQuestion(question) {
+    const chatWindow = document.getElementById('chat-window');
+    
+    // Add user message
+    const userDiv = document.createElement('div');
+    userDiv.className = 'message';
+    userDiv.innerHTML = `
+        <div class="message-box receiver">
+            ${question}
+        </div>
+    `;
+    chatWindow.appendChild(userDiv);
+    
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: question })
+        });
         
-        <img src = "/img/menu (1).png">
-    </div>  
-
-</body>
-</html>
+        const data = await response.json();
+        
+        // Add bot response
+        const botDiv = document.createElement('div');
+        botDiv.className = 'message';
+        botDiv.innerHTML = `
+            <div class="message-box sender">
+                ${data.message}
+            </div>
+        `;
+        chatWindow.appendChild(botDiv);
+        
+        // Scroll to bottom
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+</script>
