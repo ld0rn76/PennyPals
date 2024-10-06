@@ -16,7 +16,16 @@ What makes our app unique is that it’s a game played collaboratively by the pa
 
 You can check out our live demo at [Penny Pals](https://pennypals.club).
 
-![](demo/slide1.png) ![](demo/slide2.png) ![](demo/slide3.png) ![](demo/slide4.png)
+<table style="border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <td style="border: none; padding: 10;"><img src="demo/slide1.png" width="960"/></td>
+    <td style="border: none; padding: 10;"><img src="demo/slide2.png" width="960"/></td>
+  </tr>
+  <tr style="border: none;">
+    <td style="border: none; padding: 10;"><img src="demo/slide4.png" width="960"/></td>
+    <td style="border: none; padding: 10;"><img src="demo/slide3.png" width="960"/></td>
+  </tr>
+</table>
 
 ### Future Innovations
 
