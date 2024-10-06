@@ -6,6 +6,9 @@ const home = async (req, res) => {
 const courses = async (req, res) => {
     res.render("courses")
 }
+const chatbot = async (req, res) => {
+    res.render("chatbot")
+}
 const investing = async(req, res) => {
     console.log(process.env.STOCK_API_KEY)
     //apple, amazon, and walmart
@@ -42,4 +45,4 @@ const investing = async(req, res) => {
     res.render("investing", {apple: info[0], walmart: info[1], amazon: info[2]})
 }
 
-module.exports = {home, investing, courses}
+module.exports = {home, investing, courses, chatbot}
