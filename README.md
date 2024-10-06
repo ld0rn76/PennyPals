@@ -16,6 +16,8 @@ What makes our app unique is that it’s a game played collaboratively by the pa
 
 You can check out our live demo at [Penny Pals](https://pennypals.club).
 
+![](demo/slide1.png) ![](demo/slide2.png) ![](demo/slide3.png) ![](demo/slide4.png)
+
 ### Future Innovations
 
 At Penny Pals, we are continually looking for ways to enhance the user experience for both children and parents. Here’s a look at what’s next for the platform:
