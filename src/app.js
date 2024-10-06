@@ -21,9 +21,12 @@ app.set('view engine', 'ejs');
 // Routes - Make sure this comes AFTER the middleware
 app.use('/', route);
 
-// Handling CORS and Errors
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+    origin: '*', // You can specify your domain here instead of '*'
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+}));
 
 // Export the app so server.js can use it
 module.exports = app;

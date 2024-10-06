@@ -20,7 +20,7 @@ exports.handleChat = async (req, res) => {
             Keep responses short - no more than 2.3 sentences.`;
 
         console.log('Sending request to Ollama');
-        const ollama = new Ollama({ host: "http://192.168.1.122:11434"});
+        const ollama = new Ollama({ host: 'http://192.168.1.122:11434' });
         const response = await ollama.chat({
             model: 'llama3.2',
             messages: [
