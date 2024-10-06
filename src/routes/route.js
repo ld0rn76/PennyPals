@@ -5,7 +5,6 @@ const mainController = require('../controller/mainController');
 
 
 route.get("/", mainController.home)
-route.get("/investing", mainController.investing)
 route.get("/courses", mainController.courses)
 route.get("/chatbot", mainController.chatbot)
 

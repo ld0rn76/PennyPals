@@ -1,3 +1,34 @@
+const userNotifications = document.getElementsByClassName('notification')
+console.log(userNotifications)
+for(let notification of userNotifications){
+    notification.addEventListener("click", () => {
+        notification.style.display = "none"
+    })
+}
+
+const stockButtons = document.getElementsByClassName('side2');
+console.log(stockButtons)
+const stockImages = document.querySelectorAll("[id='dropdown']");
+console.log(stockImages)
+const stockPages = document.getElementsByClassName('stockPage')
+console.log(stockPages)
+let parity = [0,0,0];
+for(let i = 0; i < stockButtons.length; i++){
+    stockButtons[i].addEventListener('click', () => { 
+        if(parity[i]){
+            console.log("click 1");
+            stockPages[i].style.display = "none"
+            stockImages[i].src = "/img/next.png"
+        }
+        else{
+            console.log("click 2");
+            stockPages[i].style.display = "block"
+            stockImages[i].src = "/img/undo_dropdown.png"
+        }
+        parity[i] = (parity[i]+1)%2
+    })
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const progress = document.getElementById('progress');
     const button = document.getElementById('increaseProgress');

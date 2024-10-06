@@ -9,6 +9,7 @@
 <title>Document</title>
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/progress-bar.css">
+<link rel="stylesheet" href="/css/stockPage.css">
 </head>
 <body>
     <div id = "header">
@@ -37,7 +38,7 @@
         <h1>Your Current Balance</h1>
         <div class = "cylinder">
             <h3 class = "center">$800</h3>
-            <a>View Full History</a>
+            <a> View Full History</a>
         </div>
     </div>
     <div class = "notification">
@@ -78,10 +79,20 @@
             </div>
             <div class = "side2">
                 <h2><span class = "red">-$0.51 </span></h2>
-                <img src = "/img/next.png">
+                <img src = "/img/next.png" id="dropdown">
              </div>
         </div>
     </div>
+    <div class="stockPage">
+        <div style="flex-direction: column; padding-left: 20px; padding-top: 20px; padding-bottom: 20px;">
+            <div style="padding-bottom: 3px;">
+                <b>Name:</b> <%= walmart.name %>, <b>Symbol:</b> <%= walmart.symbol %>
+            </div>
+            <div>
+                <span style="color: green"> <b>Price:</b> <%= walmart.price %>, +$<%= walmart.change %> (<%= walmart.change_percent %>%) </span>
+            </div>
+        </div>
+    </div >
     <div class = "stocks">
         <div class = "stock">
             <div class = "image-side1">
@@ -93,8 +104,18 @@
             </div>
             <div class = "side2">
                 <h2><span class = "green">+$1.13 </span></h2>
-                <img src = "/img/next.png">
+                <img src = "/img/next.png" id="dropdown"> 
              </div>
+        </div>
+    </div>
+    <div class="stockPage">
+        <div style="flex-direction: column; padding-left: 20px; padding-top: 20px; padding-bottom: 20px;">
+            <div>
+                <b>Name:</b> <%= apple.name %>, <b>Symbol:</b> <%= apple.symbol %>
+            </div>
+            <div>
+                <span style="color: green"> <b>Price:</b> <%= apple.price %>, +$<%= apple.change %> (<%= apple.change_percent %>%) </span>
+            </div>
         </div>
     </div>
     <div class = "stocks">
@@ -108,8 +129,18 @@
             </div>
             <div class = "side2">
                 <h2><span class = "green">+$1.45 </span></h2>
-                <img src = "/img/next.png">
+                <img src = "/img/next.png" id="dropdown">
              </div>
+        </div>
+    </div>
+    <div class="stockPage">
+        <div style="flex-direction: column; padding-left: 20px; padding-top: 20px; padding-bottom: 20px;">
+            <div>
+                <b>Name:</b> <%= amazon.name %>, <b>Symbol:</b> <%= amazon.symbol %>
+            </div>
+            <div>
+                <span style="color: green"> <b>Price:</b> <%= amazon.price %>, +$<%= amazon.change %> (<%= amazon.change_percent %>%) </span>
+            </div>
         </div>
     </div>
     <div class = "stocks">
@@ -132,9 +163,10 @@
         <img src = "/img/menu (3).png">
         <img src = "/img/menu (2).png">
         <img src = "/img/menu (1).png">
-    </div>
-    
 
+    </div>
+
+    
 
 </body>
 <script src="/js/script.js"></script>
