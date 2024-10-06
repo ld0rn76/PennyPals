@@ -498,3 +498,63 @@ body {
     cursor: pointer;
     padding: 8px 10px;
 }
+
+/* course */
+
+.youtube iframe{
+    width: 392px;
+    height: 258px;
+}
+.youtube{
+    display: flex;
+    flex-direction: column;
+    width: 392px;
+
+}
+
+.imgsshare{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    border-bottom: 24px solid #F7F8FA;
+    
+}
+.imgsshare img{
+    padding: 20px;
+}
+
+.desc p{
+    font-size: 15px;
+    font-weight: 500;
+}
+.desc h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.upnext{
+    display: flex;
+    flex-direction: column;
+    width:392px;
+    padding-top: 20px;
+    
+}
+.upnext h2{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.upnext h3{
+    color: #AEAFB0;
+    font-size: 15px;
+    border-top: #EEEEEE 1px solid;
+    border-bottom: #EEEEEE 1px solid;
+    padding: 15px;
+}
+.nexts{
+    width: 392px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}

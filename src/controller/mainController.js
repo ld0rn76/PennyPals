@@ -1,7 +1,7 @@
 const axios  = require('axios');
 
 const home = async (req, res) => {
-    console.log(process.env.STOCK_API_KEY)
+    //console.log(process.env.STOCK_API_KEY)
     //apple, amazon, and walmart
     const symbols = ["AAPL:NASDAQ", "WMT:NYSE", "AMZN:NASDAQ"]
     let info = []
@@ -22,7 +22,7 @@ const home = async (req, res) => {
         await axios.request(options)
         .then(response => {
             const stocks = response.data;
-            console.log(stocks)
+            //console.log(stocks)
             info.push(stocks.data)
             
         })
@@ -32,7 +32,7 @@ const home = async (req, res) => {
         })
     }
         
-    console.log("TEST", info)
+    //console.log("TEST", info)
     res.render("home", {apple: info[0], walmart: info[1], amazon: info[2]})
 }
 const courses = async (req, res) => {
@@ -41,5 +41,9 @@ const courses = async (req, res) => {
 const chatbot = async (req, res) => {
     res.render("chatbot")
 }
+const course = async (req, res) => {
+    res.render("course")
+}
 
-module.exports = {home, chatbot, courses}
+
+module.exports = {home, chatbot, courses, course}

@@ -33,9 +33,9 @@ for(let i = 0; i < stockButtons.length; i++){
 
 document.addEventListener('DOMContentLoaded', function () {
     const progress = document.getElementById('progress');
-    const videoProgressButton = document.getElementById("video_progress");
+    const videoProgressButton = document.getElementById("video_button");
 
-    console.log(videoProgressButton)
+    //console.log(videoProgressButton)
 
     const levelText = document.querySelector('.level-number');
     
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateProgress();
 
     if (videoProgressButton) {
-        videoProgressButton.addEventListener('click', function () {
+        videoProgressButton.addEventListener('blur', function () {
             let increment = 50; // Amount to increment on each click
 
             // Calculate the next width
