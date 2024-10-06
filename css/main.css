@@ -272,3 +272,115 @@ body {
 #header a {
     text-decoration: none;
 }
+
+/** Courses page **/
+#basic{
+    width: 392px;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    background-color: #2AA46A;
+    border-radius: 15px;
+    align-items: center;
+    
+}
+#basic h1{
+    color:#FFFFFF;
+    font-size: 15px;
+    align-items: center;
+    margin-left: 10px;
+
+}
+
+.lesson{
+    width: 392px;
+    height: 92px;
+    background-color: #2A3140;
+    border-radius: 18px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.imgside{
+    width:20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textside{
+    color:white;
+    width: 50% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+}
+
+.textside h2{
+    font-size: 14px !important;
+    margin: 0 !important;
+    
+}
+
+.side4{
+    display: flex;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+}
+
+.lockedless{
+    width: 392px;
+    height: 92px;
+    background-color: #EDECEA;
+    border-radius: 18px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.textside1{
+    color:#989898;
+    width: 70% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+}
+.textside1 h2{
+    font-size: 15px !important;
+}
+.imgside1{
+    width:30%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#completion{
+    font-size: 15px !important;
+    width:392px;
+    display: flex;
+    justify-content: end;
+    padding-bottom: 50px;
+}
+
+.menu1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 326px;
+    align-items: center;
+    height: 92px;
+    border-top: #000000 1px solid;
+    
+}
