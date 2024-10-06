@@ -11,7 +11,7 @@ html{
     align-items: center;
     justify-content: center;
     font-family: "Inter", sans-serif !important;
-
+    
 }
 body { 
     width:100%;
@@ -289,7 +289,7 @@ body {
     color:#FFFFFF;
     font-size: 15px;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 15px;
 
 }
 
