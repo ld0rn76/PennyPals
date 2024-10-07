@@ -5,6 +5,7 @@ const home = async (req, res) => {
     //apple, amazon, and walmart
     const symbols = ["AAPL:NASDAQ", "WMT:NYSE", "AMZN:NASDAQ"]
     let info = []
+    /*
     for(let symbol of symbols){
         let options = {
             method: 'GET',
@@ -31,9 +32,9 @@ const home = async (req, res) => {
             res.render('error');
         })
     }
-        
+    */    
     //console.log("TEST", info)
-    res.render("home", {apple: info[0], walmart: info[1], amazon: info[2]})
+    res.render("home")
 }
 const courses = async (req, res) => {
     res.render("courses")
